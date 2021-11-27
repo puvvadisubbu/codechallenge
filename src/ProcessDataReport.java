@@ -14,6 +14,14 @@ public class ProcessDataReport {
         }
     }
 
+    /**
+     * calculates avg build times
+     * prepare customerIds per geo zone
+     * prepare customerIds per contract
+     * if you need to enhance write a different method to prepare data and invoke it from here.
+     * @param customerDataList
+     * @param name
+     */
     private static void prepareDataForReport(List<CustomerData> customerDataList, String name) {
         customerDataList.forEach(customerData -> {
             calculateAvgBuildTimes(avgBuildTime, name, customerData);
@@ -22,6 +30,10 @@ public class ProcessDataReport {
         });
     }
 
+    /**
+     * print data based on requirements
+     * if you need to enhance write a different method to print and invoke it from here.
+     */
     public static void printData() {
         printCustomerIdsPerContract(customerIdsPerContract);
         printCusomerIdsPerZone(customerIdsPerZone);
@@ -58,6 +70,7 @@ public class ProcessDataReport {
     }
 
     private static void printCustomerIdsPerContract(Map<String, List<String>> customerIdsPerContract) {
+        System.out.println("****************************************************");
         System.out.println("\033[1mThe number of unique customerId for each contractId\033[0m");
         System.out.println("****************************************************");
         for (String contractId : customerIdsPerContract.keySet()) {

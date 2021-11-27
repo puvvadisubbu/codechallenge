@@ -1,1 +1,4 @@
-# codechallenge
+# code challenge
+* Click on processData.bat
+* Enter data to process
+* **Sample data:** 2343225,2345,us_east,RedTeam,ProjectApple,3445s
