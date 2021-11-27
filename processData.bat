@@ -1,4 +1,5 @@
-cd src
-javac CustomerData.java ProcessDataReport.java ProcessDataWrapper.java ProcessData.java
+javac src\CustomerData.java src\ProcessDataReport.java src\ProcessDataWrapper.java src\ProcessData.java
 
-java ProcessData
+java -cp src ProcessData
+
+PAUSE
