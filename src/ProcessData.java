@@ -1,12 +1,13 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ProcessData {
     public static void main(String[] args) throws IOException {
+
+        //instantiate data report print class
+        PrintDataReport printDataReport = new PrintDataReport();
         System.out.println("*****************************************");
         System.out.println("\033[1mInstructions to process\033[0m");
         System.out.println("1. To exit and print data - Press enter key with empty value");
@@ -15,8 +16,15 @@ public class ProcessData {
         System.out.println("customerId,contractId,geozone,teamcode,projectcode,buildduration");
         System.out.println("example: 2343225,2345,us_east,RedTeam,ProjectApple,3445s");
         System.out.println("*********************************************************");
+
+        //read each line as one entry
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        Map<String, List<CustomerData>> customerDataMap = new HashMap<>();
+
+        //Geo zone data avg time and customer ids and contractIds
+        Map<String, GeoZoneData> geoZoneDataMap = new HashMap<>(0);
+
+        //Per contract data
+        Map<String, ContractData> contractDataMap = new HashMap<>(0);
 
         while (true) {
             String line = in.readLine();
@@ -25,11 +33,12 @@ public class ProcessData {
                 break;
             }
             //prepare data map for the data processing
-            ProcessDataWrapper.populateCustomerMap(line, customerDataMap);
+            ProcessDataWrapper.populateCustomerPerGeoZone(line, geoZoneDataMap);
+            ProcessDataWrapper.populateCustomerPerContract(line, contractDataMap);
         }
-        //process data for the report as needed
-        ProcessDataReport.processDataForReport(customerDataMap);
-        //print data report as needed based on data prepared for report.
-        ProcessDataReport.printData();
+        //print data that is required
+        printDataReport.printData(geoZoneDataMap.values(), contractDataMap.values());
     }
+
+
 }
