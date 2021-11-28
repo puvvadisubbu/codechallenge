@@ -7,12 +7,13 @@ public class CustomerData {
     //in seconds
     private Integer buildDuration;
     public CustomerData(String[] customerDataAsStringArray) {
-        this.customerId = customerDataAsStringArray[0];
-        this.contractId = customerDataAsStringArray[1];
-        this.geoZone = customerDataAsStringArray[2];
-        this.teamCode = customerDataAsStringArray[3];
-        this.projectCode = customerDataAsStringArray[4];
-        this.buildDuration = Integer.parseInt(customerDataAsStringArray[5].replaceAll("(?i)s", ""));
+        this.customerId = customerDataAsStringArray[Constants.INDEX_OF_CUSTOMER_ID];
+        this.contractId = customerDataAsStringArray[Constants.INDEX_OF_CONTRACT_ID];
+        this.geoZone = customerDataAsStringArray[Constants.INDEX_OF_GEO_ZONE];
+        this.teamCode = customerDataAsStringArray[Constants.INDEX_OF_TEAM_CODE];
+        this.projectCode = customerDataAsStringArray[Constants.INDEX_OF_PROJECT_CODE];
+        this.buildDuration = Integer.parseInt(customerDataAsStringArray[Constants.INDEX_OF_BUILD_DURATION]
+                .replaceAll(Constants.REGEX_FOR_SEARCH_S, ""));
     }
 
     public String getCustomerId() {

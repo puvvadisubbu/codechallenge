@@ -33,9 +33,11 @@ public class ProcessData {
                 break;
             }
             //prepare data map for the data processing
-            ProcessDataWrapper.populateCustomerPerGeoZone(line, geoZoneDataMap);
-            ProcessDataWrapper.populateCustomerPerContract(line, contractDataMap);
+            CustomerData customerData = ProcessDataWrapper.stringToCustomerData(line);
+            ProcessDataWrapper.populateCustomerPerGeoZone(customerData, geoZoneDataMap);
+            ProcessDataWrapper.populateCustomerPerContract(customerData, contractDataMap);
         }
+
         //print data that is required
         printDataReport.printData(geoZoneDataMap.values(), contractDataMap.values());
     }

@@ -7,3 +7,6 @@
 ---------------- **or** ----------------
 * Import project into IDE
 * Run **ProcessData** class file
+
+**Assumptions**
+* Input validation was not handled to the level of data correctness

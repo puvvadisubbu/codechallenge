@@ -28,8 +28,7 @@ public class ProcessDataWrapper {
         return true;
     }
 
-    public static void populateCustomerPerGeoZone(String input, Map<String, GeoZoneData> geoZoneDataMap) {
-        CustomerData data = stringToCustomerData(input);
+    public static void populateCustomerPerGeoZone(CustomerData data, Map<String, GeoZoneData> geoZoneDataMap) {
         if (data == null) {
             return;
         }
@@ -53,8 +52,7 @@ public class ProcessDataWrapper {
         }
     }
 
-    public static void populateCustomerPerContract (String input, Map<String, ContractData> contractDataMap){
-        CustomerData data = stringToCustomerData(input);
+    public static void populateCustomerPerContract (CustomerData data, Map<String, ContractData> contractDataMap){
         if (data == null) {
             return;
         }
