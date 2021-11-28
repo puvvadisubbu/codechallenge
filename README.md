@@ -10,3 +10,7 @@
 
 **Assumptions**
 * Input validation was not handled to the level of data correctness
+
+Screenshot of results for the data given in challenge:
+
+![img.png](img.png)
