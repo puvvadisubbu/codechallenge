@@ -6,8 +6,6 @@ import java.util.*;
 public class ProcessData {
     public static void main(String[] args) throws IOException {
 
-        //instantiate data report print class
-        PrintDataReport printDataReport = new PrintDataReport();
         System.out.println("*****************************************");
         System.out.println("\033[1mInstructions to process\033[0m");
         System.out.println("1. To exit and print data - Press enter key with empty value");
@@ -37,6 +35,8 @@ public class ProcessData {
             ProcessDataWrapper.populateCustomerPerGeoZone(customerData, geoZoneDataMap);
             ProcessDataWrapper.populateCustomerPerContract(customerData, contractDataMap);
         }
+        //instantiate data report print class
+        PrintDataReport printDataReport = new PrintDataReport();
 
         //print data that is required
         printDataReport.printData(geoZoneDataMap.values(), contractDataMap.values());
