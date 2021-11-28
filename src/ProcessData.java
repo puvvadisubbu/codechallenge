@@ -6,14 +6,14 @@ import java.util.*;
 public class ProcessData {
     public static void main(String[] args) throws IOException {
 
-        System.out.println("*****************************************");
+        System.out.println("****************************************************************");
         System.out.println("\033[1mInstructions to process\033[0m");
         System.out.println("1. To exit and print data - Press enter key with empty value");
         System.out.println("2. Please follow the order of input as below");
-        System.out.println("*****************************************");
+        System.out.println("****************************************************************");
         System.out.println("customerId,contractId,geozone,teamcode,projectcode,buildduration");
         System.out.println("example: 2343225,2345,us_east,RedTeam,ProjectApple,3445s");
-        System.out.println("*********************************************************");
+        System.out.println("****************************************************************");
 
         //read each line as one entry
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
