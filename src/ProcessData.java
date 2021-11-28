@@ -39,6 +39,4 @@ public class ProcessData {
         //print data that is required
         printDataReport.printData(geoZoneDataMap.values(), contractDataMap.values());
     }
-
-
 }

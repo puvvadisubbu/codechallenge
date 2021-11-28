@@ -25,6 +25,6 @@ public class PrintDataReport implements DataReport {
         System.out.println("*******************************************");
         System.out.println("The data for contract \033[1m "+ contractData.getContractId() +" \033[0m");
         System.out.println("***********************************************");
-        System.out.println("Has " + contractData.getCustomerIds() + " unique customer(s)");
+        System.out.println("Has " + contractData.getCustomerIds().size() + " unique customer(s)");
     }
 }
